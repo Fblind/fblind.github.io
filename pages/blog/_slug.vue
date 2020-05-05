@@ -16,33 +16,34 @@
 
 <script>
 import Banner from '~/components/Banner.vue'
-import test from '~/articles/test.md'
 export default {
   name: 'Post',
-  components: { Banner, test: test.vue.component },
-  async asyncData ({ params }) {
-    const markdown = await require(`~/articles/${params.slug}.md`)
-    return {
-      image: markdown.attributes.image || null,
-      title: markdown.attributes.title,
-      dynamicComponent: markdown.vue.component
-    }
-  }
-  // data () {
+  components: { Banner },
+  // async asyncData ({ params }) {
+  //   const markdown = await require(`~/articles/${params.slug}.md`)
   //   return {
-  //     title: null,
-  //     dynamicComponent: null
+  //     image: markdown.attributes.image || null,
+  //     title: markdown.attributes.title,
+  //     dynamicComponent: markdown.vue.component
   //   }
   // },
-  // created () {
-  //   const markdown = require(`~/articles/${this.$route.params.slug}.md`)
-  //   this.title = markdown.attributes.title
-  //   this.dynamicComponent = markdown.vue.component
+  data () {
+    return {
+      image: null,
+      title: null,
+      dynamicComponent: null
+    }
+  },
+  created () {
+    const markdown = require(`~/articles/${this.$route.params.slug}.md`)
+    this.image = markdown.attributes.image || null
+    this.title = markdown.attributes.title
+    this.dynamicComponent = markdown.vue.component
 
-  //   // Use Async Components for the benefit of code splitting
-  //   // https://vuejs.org/v2/guide/components-dynamic-async.html#Async-Components
-  //   // this.dynamicComponent = () => import(`~/articles/${this.fileName}.md`).then(({ vue }) => vue.component
-  // }
+    // Use Async Components for the benefit of code splitting
+    // https://vuejs.org/v2/guide/components-dynamic-async.html#Async-Components
+    // this.dynamicComponent = () => import(`~/articles/${this.fileName}.md`).then(({ vue }) => vue.component
+  }
 }
 </script>
 
