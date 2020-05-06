@@ -124,5 +124,9 @@ export default {
         }
       })
     }
+  },
+  // TODO: remove when implement all the website
+  router: {
+    middleware: 'redirect-about'
   }
 }
