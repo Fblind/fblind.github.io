@@ -7,13 +7,14 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Facundo Soria Guerrero | Full-Stack Developer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
+      // TODO: Add all types of favicon
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
@@ -74,7 +75,11 @@ export default {
               backgroundFirst: 'I’ve been working in the software industry for about ten years, along these years I worked in several technologies, industries, and companies. From big companies like <a href="https://www.accenture.com/ar-es">Accenture</a> to startups like <a href="https://www.betterez.com/">Betterez</a>, likewise <a href="https://devecoop.com/">my own company</a> where I learned not only about tech stuff but also a lot about soft skills, business, team management, among others.',
               backgroundSecond: 'While I was studying at the university I was an <a href="http://www.pdep.com.ar/quines-somos/quienes-fuimos">assistant professor at “Programming Paradigms”</a>. This experience made me realize the importance of teaching and learning and its beautiful journey.',
               contactMeFirst: 'If you need help or a software developer for your project or if you have any doubts or just want to chat, don’t hesitate to contact me through email at <a href="mailto:fblind@gmail.com">fblind@gmail.com</a> or <a href="https://www.linkedin.com/in/facundo-soria-guerrero-425a5695/?locale=en_US">LinkedIn</a> or <a href="https://github.com/fblind">Github</a>.',
-              developerDescription: 'a<strong class="text-primary"> full-stack</strong> developer'
+              developerDescription: 'a<strong class="text-primary"> full-stack</strong> developer',
+              about: {
+                title: 'Facundo Soria Guerrero | Full-Stack Developer',
+                description: 'Hi!, I\'m full stack developer, don\'t hesitate to contact me if you need help with your projects'
+              }
             },
             es: {
               hiIam: 'Hola!, soy',
@@ -90,7 +95,11 @@ export default {
               backgroundFirst: 'Trabajo en la industria del software desde hace diez años, en todos esos años trabajé en diferentes tecnologías, industrias y compañías. Desde compañías grandes como <a href="https://www.accenture.com/ar-es">Accenture</a> a startups como <a href="https://www.betterez.com/">Betterez</a> pasando por haber tenido la gran experiencia de haber tenido <a href="https://devecoop.com/">mi propia compañía</a> donde aprendi muchisimo sobre hábilidades blandas, negocios, manejo de equipos y demás.',
               backgroundSecond: 'Mientras estudiaba en la facultad tuve la posibilidad de ser <a href="http://www.pdep.com.ar/quines-somos/quienes-fuimos">ayudante de Paradigmas de la programación</a> donde descubrí lo importante y lo lindo que es enseñar y aprender.',
               contactMeFirst: 'Si necesitas una mano o un desarrollador para tu proyecto, cualquier otra duda o simplemente charlar, me podes contactar por mail a <a href="mailto:fblind@gmail.com">fblind@gmail.com</a>, o por <a href="https://www.linkedin.com/in/facundo-soria-guerrero-425a5695/?locale=en_US">LinkedIn</a> o <a href="https://github.com/fblind">Github</a>.',
-              developerDescription: 'desarrollador <strong class="text-primary">full-stack</strong>'
+              developerDescription: 'desarrollador <strong class="text-primary">full-stack</strong>',
+              about: {
+                title: 'Facundo Soria Guerrero | Desarrollador Full-Stack',
+                description: 'Hola!, Soy un desarrollador full stack, no dudes en contactarme si necesitas ayuda con tus proyectos'
+              }
             }
           }
         }

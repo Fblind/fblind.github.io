@@ -30,7 +30,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--white);
-  padding: 6rem 0 10rem 0;
+  padding: 4rem 0 10rem 0;
   text-align: center;
   margin-bottom: 3rem;
 }

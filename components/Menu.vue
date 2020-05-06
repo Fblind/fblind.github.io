@@ -1,28 +1,26 @@
 <template>
   <header class="container-fluid header" :class="headerClass">
     <nav class="navbar navbar-expand-lg header-menu container">
-      <div class="collapse navbar-collapse text-dark">
-        <ul class="navbar-nav header-menu-items ml-md-auto">
-          <!-- <li class="nav-item header-menu-item mr-2">
-            <a class="nav-link">Home</a>
-          </li>
-          <li class="nav-item header-menu-item mr-2">
-            <a class="nav-link">Sobre mi</a>
-          </li> -->
-          <li
-            v-for="locale in availableLocales"
-            :key="locale.code"
-            class="nav-item header-menu-item mr-2"
+      <ul class="navbar-nav header-menu-items ml-auto text-dark">
+        <!-- <li class="nav-item header-menu-item mr-2">
+          <a class="nav-link">Home</a>
+        </li>
+        <li class="nav-item header-menu-item mr-2">
+          <a class="nav-link">Sobre mi</a>
+        </li> -->
+        <li
+          v-for="locale in availableLocales"
+          :key="locale.code"
+          class="nav-item header-menu-item mr-2"
+        >
+          <nuxt-link
+            class="nav-link"
+            :to="switchLocalePath(locale.code)"
           >
-            <nuxt-link
-              class="nav-link"
-              :to="switchLocalePath(locale.code)"
-            >
-              {{ locale.name }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </div>
+            {{ locale.name }}
+          </nuxt-link>
+        </li>
+      </ul>
     </nav>
   </header>
 </template>
@@ -49,7 +47,7 @@ export default {
   methods: {
     updateMenuClass () {
       const currentYPosition = window.scrollY
-      if (currentYPosition > 100) {
+      if (currentYPosition > 50) {
         this.headerClass = 'header-scrolled shadow bg-light'
         return
       }

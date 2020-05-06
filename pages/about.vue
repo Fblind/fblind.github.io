@@ -11,7 +11,7 @@
             <h1 v-html="$t('developerDescription')" />
             <h4>{{ $t('moreExpiriencedInTheBackend') }}</h4>
           </div>
-          <div class="col">
+          <div class="col d-none d-lg-block">
             <img src="~/assets/me.png" class="img-me" alt="">
             <p class="bg-primary background-me img-fluid" />
           </div>
@@ -43,6 +43,7 @@
 
 <script>
 import Banner from '~/components/Banner.vue'
+import img from '~/assets/me.png'
 export default {
   name: 'About',
   components: { Banner },
@@ -50,7 +51,17 @@ export default {
     return {
       htmlAttrs: {
         lang: this.$i18n.locale
-      }
+      },
+      meta: [
+        { name: 'author', content: 'Facundo Soria Guerrero' },
+        { name: 'description', content: this.$t('about.description') },
+        { property: 'og:title', content: this.$t('about.title') },
+        { property: 'og:description', content: this.$t('about.description') },
+        { property: 'og:url', content: process.env.BASE_URL + this.$router.currentRoute.fullPath },
+        { property: 'og:image', content: process.env.BASE_URL + img },
+        { name: 'twitter:description', content: this.$t('about.description') },
+        { name: 'twitter:image', content: process.env.BASE_URL + img }
+      ]
     }
   }
 }
@@ -99,4 +110,11 @@ export default {
 .about-content p {
   line-height: 1.7rem;
 }
+
+@media screen and (max-width: 576px) {
+  .display-4 {
+    font-size: 3rem
+  }
+}
+
 </style>
