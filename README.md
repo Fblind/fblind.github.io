@@ -1,6 +1,8 @@
-# personal-website
+# Facundo Soria Guerrero
 
-> Personal page &amp; blog
+This repo contains my personal website and blog.
+
+The project is build with nuxt and it's generated before the deploy so I'm getting all the benefits of the JAMStack architecture. Also the blog posts are loaded from markdown files.
 
 ## Build Setup
 
