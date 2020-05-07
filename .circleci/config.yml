@@ -54,7 +54,15 @@ jobs:
 workflows:
   build-test-publish:
     jobs:
-      - build-and-test
+      - build-and-test:
+          filters:
+            branches:
+              only:
+                - dev
       - publish:
           requires:
             - build-and-test
+          filters:
+            branches:
+              only:
+                - dev
