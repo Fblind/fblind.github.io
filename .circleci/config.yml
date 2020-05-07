@@ -45,6 +45,9 @@ jobs:
       - restore_npm_cache
       - run: git config user.name $GITHUB_NAME
       - run: git config user.email $GITHUB_EMAIL
+      - add_ssh_keys:
+          fingerprints:
+            - $GITHUB_FINGERPRINT
       - run: npm run generate:gh-pages
       - run: npm run deploy:gh-pages
 
