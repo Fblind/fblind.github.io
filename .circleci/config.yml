@@ -9,30 +9,30 @@ commands:
   restore_npm_cache:
     steps:
       - restore_cache:
-        name: Restore cache
-        keys:
-          - v1-dependencies-{{ checksum "package.json" }}.
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+          name: Restore cache
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}.
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
   save_npm_cache:
     steps:
       - save_cache:
-        name: Save cache
-        paths:
-          - node_modules
-        key: v1-dependencies-{{ checksum "package.json" }}
+          name: Save cache
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
 
 jobs:
   build-and-test:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache
+      - restore_npm_cache
       - run: npm install
       - run:
           name: Run tests
           command: npm test
-      - save_cache
+      - save_npm_cache
       - persist_to_workspace:
           root: ~/repo
           paths: .
@@ -42,7 +42,7 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - checkout
-      - restore_cache
+      - restore_npm_cache
       - run: git config user.name $GITHUB_NAME
       - run: git config user.email $GITHUB_EMAIL
       - run: npm run generate:gh-pages
