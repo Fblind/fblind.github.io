@@ -49,7 +49,7 @@ jobs:
           fingerprints:
             - "5e:08:6c:dd:81:96:84:8e:77:2f:7b:ac:c4:81:39:b6"
       - run: npm run generate:gh-pages
-      - run: gh-pages -d repo/dist -m 'Update [skip ci]' -t
+      - run: npm run deploy:gh-pages
 
 workflows:
   build-test-publish:
