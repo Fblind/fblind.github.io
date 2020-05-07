@@ -47,7 +47,7 @@ jobs:
       - run: git config user.email $GITHUB_EMAIL
       - add_ssh_keys:
           fingerprints:
-            - "5e:08:6c:dd:81:96:84:8e:77:2f:7b:ac:c4:81:39:b6"
+            - "a1:c4:02:25:02:2c:f1:90:9d:c4:65:e7:69:28:3e:1a"
       - run: npm run generate:gh-pages
       - run: npm run deploy:gh-pages
 
