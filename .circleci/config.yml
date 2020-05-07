@@ -17,10 +17,10 @@ commands:
   save_npm_cache:
     steps:
       - save_cache:
-          name: "Save cache"
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+        name: "Save cache"
+        paths:
+          - node_modules
+        key: v1-dependencies-{{ checksum "package.json" }}
 
 jobs:
   build-and-test:
