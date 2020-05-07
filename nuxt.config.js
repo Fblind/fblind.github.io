@@ -65,29 +65,29 @@ export default {
           fallbackLocale: 'en',
           messages: {
             en: {
-              hiIam: 'Hello!, I\'m',
+              hiIam: 'Hello! I\'m',
               developer: 'developer',
-              moreExpiriencedInTheBackend: 'more experienced in the backend',
+              moreExpiriencedInTheBackend: 'more experienced in the back-end',
               aboutMe: 'about me',
               background: 'background',
               contactMe: 'contact me',
-              aboutMeFirst: 'I love everything regarding programming. As a software professional, I also like constantly researching and learning.',
-              aboutMeSecond: 'I consider myself as a <a href="https://manifesto.softwarecraftsmanship.org/#/en">Software Crafter</a>, always trying to deliver a <strong class="text-primary">well-crafted software</strong>, constantly <strong class="text-primary">adding value</strong>, I also think of myself as a professional who <strong class="text-primary">collaborates and creates productive partnerships</strong> with customers.',
-              aboutMeThird: 'I like writing about what I know, about my researching and about the things I’m learning, and I hope one day this will help someone. Currently the topics I’m interested are JavaScript, NodeJS, VueJS, APIS, agile techniques, productivity, remote work, systems design and architecture.',
+              aboutMeFirst: 'I love everything about programming. As a software professional, I also like constantly research and learning.',
+              aboutMeSecond: 'I consider myself a <a href="https://manifesto.softwarecraftsmanship.org/#/en">Software Craftsman</a>, always striving to deliver <strong class="text-primary">well-crafted software</strong>, constantly <strong class="text-primary">adding value</strong>, and a professional who <strong class="text-primary">collaborates and creates productive partnerships</strong> with customers.',
+              aboutMeThird: 'I like writing about what I know, my research and the things I’m learning, and I hope one day this will help someone. Currently the topics I’m interested are JavaScript, NodeJS, VueJS, APIs, Agile techniques, productivity, remote work, systems design and architecture.',
               aboutMeForth: 'Besides being curious about programming, I’m an animal lover (I have two dogs 🐶🐶 and a cat🐱) and sports lover ⚽.',
-              backgroundFirst: 'I’ve been working in the software industry for about ten years, along these years I worked in several technologies, industries, and companies. From big companies like <a href="https://www.accenture.com/ar-es">Accenture</a> to startups like <a href="https://www.betterez.com/">Betterez</a>, likewise <a href="https://devecoop.com/">my own company</a> where I learned not only about tech stuff but also a lot about soft skills, business, team management, among others.',
-              backgroundSecond: 'While I was studying at the university I was an <a href="http://www.pdep.com.ar/quines-somos/quienes-fuimos">assistant professor at “Programming Paradigms”</a>. This experience made me realize the importance of teaching and learning and its beautiful journey.',
-              contactMeFirst: 'If you need help or a software developer for your project or if you have any doubts or just want to chat, don’t hesitate to contact me through email at <a href="mailto:fblind@gmail.com">fblind@gmail.com</a> or <a href="https://www.linkedin.com/in/facundo-soria-guerrero-425a5695/?locale=en_US">LinkedIn</a> or <a href="https://github.com/fblind">Github</a>.',
-              developerDescription: 'a<strong class="text-primary"> full-stack</strong> developer',
+              backgroundFirst: 'I’ve been working in the software industry for more than ten years, along these years I worked in several industries, companies and technologies. From big companies like <a href="https://www.accenture.com/ar-es">Accenture</a> to startups like <a href="https://www.betterez.com/">Betterez</a>, likewise <a href="https://devecoop.com/">my own company</a> where I learned not only tech stuff but many soft skills, business, team management, among others.',
+              backgroundSecond: 'While I was studying at the university I was an <a href="http://www.pdep.com.ar/quines-somos/quienes-fuimos">assistant professor at “Programming Paradigms”</a>. This experience made me realize the importance of teaching and learning, it is a rewarding journey.',
+              contactMeFirst: 'If you need help or a software developer for your project or if you have any doubts or just want to chat, don’t hesitate to contact me through email at <a href="mailto:fblind@gmail.com">fblind@gmail.com</a>, <a href="https://www.linkedin.com/in/facundo-soria-guerrero-425a5695/?locale=en_US">LinkedIn</a> or <a href="https://github.com/fblind">Github</a>.',
+              developerDescription: 'a<strong class="text-primary"> full-stack</strong> web developer',
               about: {
                 title: 'Facundo Soria Guerrero | Full-Stack Developer',
                 description: 'Hi!, I\'m full stack developer, don\'t hesitate to contact me if you need help with your projects'
               }
             },
             es: {
-              hiIam: 'Hola!, soy',
+              hiIam: 'Hola! soy',
               developer: 'desarrollador',
-              moreExpiriencedInTheBackend: 'más experimentado en el backend',
+              moreExpiriencedInTheBackend: 'más experimentado en el back-end',
               aboutMe: 'sobre mi',
               background: 'historial',
               contactMe: 'contactame',
@@ -97,8 +97,8 @@ export default {
               aboutMeForth: 'Aparte de amar la programación amo los animales (principalmente mis dos perros 🐶🐶 y mi gato 🐱) y los deportes ⚽.',
               backgroundFirst: 'Trabajo en la industria del software desde hace diez años, en todos esos años trabajé en diferentes tecnologías, industrias y compañías. Desde compañías grandes como <a href="https://www.accenture.com/ar-es">Accenture</a> a startups como <a href="https://www.betterez.com/">Betterez</a> pasando por haber tenido la gran experiencia de haber tenido <a href="https://devecoop.com/">mi propia compañía</a> donde aprendi muchisimo sobre hábilidades blandas, negocios, manejo de equipos y demás.',
               backgroundSecond: 'Mientras estudiaba en la facultad tuve la posibilidad de ser <a href="http://www.pdep.com.ar/quines-somos/quienes-fuimos">ayudante de Paradigmas de la programación</a> donde descubrí lo importante y lo lindo que es enseñar y aprender.',
-              contactMeFirst: 'Si necesitas una mano o un desarrollador para tu proyecto, cualquier otra duda o simplemente charlar, me podes contactar por mail a <a href="mailto:fblind@gmail.com">fblind@gmail.com</a>, o por <a href="https://www.linkedin.com/in/facundo-soria-guerrero-425a5695/?locale=en_US">LinkedIn</a> o <a href="https://github.com/fblind">Github</a>.',
-              developerDescription: 'desarrollador <strong class="text-primary">full-stack</strong>',
+              contactMeFirst: 'Si necesitas una mano o un desarrollador para tu proyecto, cualquier otra duda o simplemente charlar, me podes contactar por mail a <a href="mailto:fblind@gmail.com">fblind@gmail.com</a>, <a href="https://www.linkedin.com/in/facundo-soria-guerrero-425a5695/?locale=en_US">LinkedIn</a> o <a href="https://github.com/fblind">Github</a>.',
+              developerDescription: 'desarrollador web <strong class="text-primary">full-stack</strong>',
               about: {
                 title: 'Facundo Soria Guerrero | Desarrollador Full-Stack',
                 description: 'Hola!, Soy un desarrollador full stack, no dudes en contactarme si necesitas ayuda con tus proyectos'
