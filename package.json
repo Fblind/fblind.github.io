@@ -11,8 +11,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "build:gh-pages": "DEPLOY_ENV=GH_PAGES BASE_URL=https://fblind.github.io nuxt build",
-    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES BASE_URL=https://fblind.github.io nuxt generate",
-    "deploy:gh-pages": "gh-pages -d dist -m 'Update [skip ci]' -t"
+    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES BASE_URL=https://fblind.github.io nuxt generate"
   },
   "dependencies": {
     "bootstrap": "^4.1.3",
