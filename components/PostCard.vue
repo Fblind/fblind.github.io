@@ -32,7 +32,7 @@
         </div>
         <div class="post-card-preview-more float-right">
           <small>
-            <nuxt-link class="post-card-preview-more-text" :to="getPostURL(post)">Leer más </nuxt-link>
+            <nuxt-link class="post-card-preview-more-text" :to="getPostURL(post)">{{ $t('readMore') }} </nuxt-link>
             <i class="fa fa-arrow-right" />
           </small>
         </div>

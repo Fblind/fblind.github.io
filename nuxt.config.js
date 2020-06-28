@@ -87,7 +87,8 @@ export default {
                 description: 'Hi!, I\'m full stack developer, don\'t hesitate to contact me if you need help with your projects'
               },
               homeTitle: 'Hello! I\'m Facundo',
-              homeSubtitle: 'Full-Stack developer, curious about programming & animal lover'
+              homeSubtitle: 'Full-Stack developer, curious about programming & animal lover',
+              readMore: 'Read more'
             },
             es: {
               home: 'Inicio',
@@ -110,7 +111,8 @@ export default {
                 description: 'Hola!, Soy un desarrollador full stack, no dudes en contactarme si necesitas ayuda con tus proyectos'
               },
               homeTitle: 'Hola! Soy Facundo',
-              homeSubtitle: 'Desarrollador full-stack, curioso de la programación y amante de los animales'
+              homeSubtitle: 'Desarrollador full-stack, curioso de la programación y amante de los animales',
+              readMore: 'Leer más'
             }
           }
         }
