@@ -1,6 +1,8 @@
 
 import path from 'path'
 import Mode from 'frontmatter-markdown-loader/mode'
+import articles from './articles'
+
 export default {
   mode: 'universal',
   /*
@@ -65,6 +67,7 @@ export default {
           fallbackLocale: 'en',
           messages: {
             en: {
+              home: 'Home',
               hiIam: 'Hello! I\'m',
               developer: 'developer',
               moreExpiriencedInTheBackend: 'specialized in back-end development',
@@ -82,9 +85,12 @@ export default {
               about: {
                 title: 'Facundo Soria Guerrero | Full-Stack Developer',
                 description: 'Hi!, I\'m full stack developer, don\'t hesitate to contact me if you need help with your projects'
-              }
+              },
+              homeTitle: 'Hello! I\'m Facundo',
+              homeSubtitle: 'Full-Stack developer, curious about programming & animal lover'
             },
             es: {
+              home: 'Inicio',
               hiIam: 'Hola! soy',
               developer: 'desarrollador',
               moreExpiriencedInTheBackend: 'especializado en back-end',
@@ -102,7 +108,9 @@ export default {
               about: {
                 title: 'Facundo Soria Guerrero | Desarrollador Full-Stack',
                 description: 'Hola!, Soy un desarrollador full stack, no dudes en contactarme si necesitas ayuda con tus proyectos'
-              }
+              },
+              homeTitle: 'Hola! Soy Facundo',
+              homeSubtitle: 'Desarrollador full-stack, curioso de la programación y amante de los animales'
             }
           }
         }
@@ -128,8 +136,9 @@ export default {
       })
     }
   },
-  // TODO: remove when implement all the website
-  router: {
-    middleware: 'redirect-about'
+  generate: {
+    routes: ['/es']
+      .concat(articles.en.map(w => `/blog/${w}`))
+      .concat(articles.es.map(w => `es/blog/${w}`))
   }
 }

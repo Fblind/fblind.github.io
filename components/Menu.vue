@@ -1,13 +1,18 @@
 <template>
   <header class="container-fluid header" :class="headerClass">
     <nav class="navbar navbar-expand-lg header-menu container">
+      <b-navbar-brand>
+        <nuxt-link :to="localePath('index')">
+          <img :src="require(`~/assets/${logo}`)" class="d-inline-block align-top logo" alt="logo">
+        </nuxt-link>
+      </b-navbar-brand>
       <ul class="navbar-nav header-menu-items ml-auto text-dark">
-        <!-- <li class="nav-item header-menu-item mr-2">
-          <a class="nav-link">Home</a>
-        </li>
-        <li class="nav-item header-menu-item mr-2">
-          <a class="nav-link">Sobre mi</a>
-        </li> -->
+        <nuxt-link class="nav-link capitalize" :to="localePath('index')">
+          {{ $t('home') }}
+        </nuxt-link>
+        <nuxt-link class="nav-link capitalize" :to="localePath('about')">
+          {{ $t('aboutMe') }}
+        </nuxt-link>
         <li
           v-for="locale in availableLocales"
           :key="locale.code"
@@ -30,7 +35,8 @@ export default {
   name: 'Menu',
   data () {
     return {
-      headerClass: ''
+      headerClass: '',
+      logo: 'logo.png'
     }
   },
   computed: {
@@ -68,11 +74,32 @@ export default {
   transition: all 0.5s;
   z-index: 997;
 }
+
 .active {
   padding-bottom: 0.2rem;
   border-bottom: solid 2px var(--blue);
 }
+
 .nav-link {
   color: var(--dark)
 }
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.logo {
+  width: 2rem;
+}
+
+@media (min-width: 300px) {
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+}
+
 </style>

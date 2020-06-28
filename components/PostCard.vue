@@ -1,15 +1,24 @@
 <template>
   <article class="card post-card-preview">
     <figure class="post-card-preview-img-container">
-      <img class="card-img-top img-fluid post-card-preview-img" src="" alt="">
+      <img
+        class="card-img-top img-fluid post-card-preview-img"
+        :src="require(`../assets/${post.image}`)"
+        :alt="post.title"
+      >
     </figure>
     <div class="card-body post-card-preview-content">
       <div class="text-center preview-meta">
         <ul class="preview-meta-menu">
-          <li class="preview-meta-info"><small class="text-muted">Mayo 3, 2020</small></li>
-          <li class="preview-meta-info"><small class="text-muted">GIT</small></li>
-          <li class="preview-meta-info"><small class="text-muted">Básico</small></li>
-          <li class=""><small class="text-muted">2 Mins</small></li>
+          <li class="preview-meta-info"><small class="text-muted">{{ post.date }}</small></li>
+          <template v-for="keyword of post.keywords">
+            <li :key="keyword" class="preview-meta-info">
+              <small class="text-muted">{{ keyword }}</small>
+            </li>
+          </template>
+          <li class="">
+            <small class="text-muted">{{ post.readingTime }}</small>
+          </li>
         </ul>
       </div>
       <div class="">
@@ -22,7 +31,10 @@
           </p>
         </div>
         <div class="post-card-preview-more float-right">
-          <small class="post-card-preview-more-text">Leer más <i class="fa fa-arrow-right"></i></small>
+          <small>
+            <nuxt-link class="post-card-preview-more-text" :to="getPostURL(post)">Leer más </nuxt-link>
+            <i class="fa fa-arrow-right" />
+          </small>
         </div>
       </div>
     </div>
@@ -30,12 +42,18 @@
 </template>
 
 <script>
+// https://blog.lichter.io/posts/dynamic-images-vue-nuxt/
 export default {
   name: 'PostCard',
   props: {
     post: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    getPostURL (post) {
+      return this.$i18n.locale === 'es' ? `/es/blog/${post.url}` : `blog/${post.url}`
     }
   }
 }
@@ -52,7 +70,7 @@ export default {
 
 .post-card-preview-img {
   height: 15rem;
-  object-fit: cover;
+  /* object-fit: cover; */
 }
 
 .preview-meta {
@@ -96,6 +114,11 @@ export default {
   letter-spacing: 0.1rem;
   font-weight: bolder;
   cursor: pointer;
+}
+
+a.post-card-preview-more-text:link, a.post-card-preview-more-text:visited {
+  color: var(--dark);
+  text-decoration: none;
 }
 
 .post-card-preview-more i {

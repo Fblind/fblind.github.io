@@ -1,8 +1,8 @@
 <template>
   <footer class="footer">
     <ul class="icons">
-      <li><a href="https://dev.to/fblind" class="icon brands fab fa-dev"><span class="label">dev.to</span></a></li>
-      <li><a href="https://medium.com/@fblind" class="icon brands fab fa-medium"><span class="label">Medium</span></a></li>
+      <!-- <li><a href="https://dev.to/fblind" class="icon brands fab fa-dev"><span class="label">dev.to</span></a></li>
+      <li><a href="https://medium.com/@fblind" class="icon brands fab fa-medium"><span class="label">Medium</span></a></li> -->
       <li><a href="https://github.com/fblind" class="icon brands fa fa-github"><span class="label">Github</span></a></li>
       <li><a href="https://www.linkedin.com/in/facundo-soria-guerrero-425a5695/?locale=en_US" class="icon brands fa fa-linkedin"><span class="label">LinkedIn</span></a></li>
       <li><a href="mailto:fblind@gmail.com" class="icon brands fa fa-envelope"><span class="label">Email</span></a></li>

@@ -24,10 +24,7 @@ export default {
 
 <style>
 .banner {
-  background-attachment: fixed;
   background-color: var(--white);
-  background-position: center center;
-  background-repeat: no-repeat;
   background-size: cover;
   color: var(--white);
   padding: 4rem 0 10rem 0;
