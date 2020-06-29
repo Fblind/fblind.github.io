@@ -1,8 +1,8 @@
 ---
 title: Semántica en HTML.
 image: 'html-semantic-banner.png'
-date: 'Jun 28, 2020'
-datetime: '2020-6-28'
+date: 'Jun 29, 2020'
+datetime: '2020-6-29'
 keywords: ['HTML']
 readingTime: '2 Mins'
 description: 'HTML es un lenguaje simple para aprender, sin muchas complicaciones, pero hay algo muy importante que no siempre se toma tan en cuenta cuando se lo usa, la semántica.'
@@ -17,7 +17,9 @@ Obviamente lo que hice antes fue *repasar y ver un poco cómo poder enseñarlo*,
 
 ## ¿ De qué hablo cuando digo *semántica* ?
 
-Significa saber realmente **qué significado tiene cada elemento HTML** (si es que tiene, por ejemplo un `div` o un `span` son contenedores genéricos sin ningún significado especial ni semántica) y entender qué es lo que queremos transmitir y cómo podemos hacerlo de la mejor manera.
+Significa saber realmente **qué significado tiene cada elemento HTML** y entender qué es lo que queremos transmitir y cómo podemos hacerlo de la mejor manera.
+
+> Elementos como un `div` o un `span` son contenedores genéricos sin ningún significado especial ni semántica.
 
 Es importante a la hora de crear nuestros documentos, pensar varias veces cual es el mejor elemento que describe lo que queremos hacer. Gracias a HTML5 hoy tenemos muchos *nuevos elementos semánticos* y tenemos que aprovecharlos y tomarnos el tiempo necesario antes de escribir nuestro documento.
 
