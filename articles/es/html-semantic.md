@@ -2,6 +2,7 @@
 title: Semántica en HTML.
 image: 'html-semantic-banner.png'
 date: 'Jun 28, 2020'
+datetime: '2020-6-28'
 keywords: ['HTML']
 readingTime: '2 Mins'
 description: 'HTML es un lenguaje simple para aprender, sin muchas complicaciones, pero hay algo muy importante que no siempre se toma tan en cuenta cuando se lo usa, la semántica.'

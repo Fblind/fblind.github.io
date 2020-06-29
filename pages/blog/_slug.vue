@@ -31,19 +31,33 @@ export default {
   //   name: 'slide-fade'
   // },
   components: { Banner },
-  // async asyncData ({ params }) {
-  //   const markdown = await require(`~/articles/${params.slug}.md`)
-  //   return {
-  //     image: markdown.attributes.image || null,
-  //     title: markdown.attributes.title,
-  //     dynamicComponent: markdown.vue.component
+  // asyncData ({ app, params }) {
+  //   const locale = app.i18n.locale === 'es' ? 'es' : 'en'
+  //   async function asyncImport (locale, params) {
+  //     const markdown = await import(`~/articles/${locale}/${params.slug}.md`)
+  //     return markdown
   //   }
+  //   return asyncImport(locale, params).then((markdown) => {
+  //     return {
+  //       image: markdown.attributes.image || null,
+  //       title: markdown.attributes.title,
+  //       description: markdown.attributes.description,
+  //       dynamicComponent: markdown.vue.component
+  //     }
+  //   })
   // },
   data () {
     return {
       image: null,
       title: null,
+      description: null,
+      url: null,
       dynamicComponent: null
+    }
+  },
+  computed: {
+    ogImage () {
+      return `${process.env.BASE_URL}/images/articles/${this.url}_thumbnail.png`
     }
   },
   created () {
@@ -51,11 +65,30 @@ export default {
     const markdown = require(`~/articles/${locale}/${this.$route.params.slug}.md`)
     this.image = markdown.attributes.image || null
     this.title = markdown.attributes.title
+    this.description = markdown.attributes.description
+    this.url = markdown.attributes.url
     this.dynamicComponent = markdown.vue.component
 
     // Use Async Components for the benefit of code splitting
     // https://vuejs.org/v2/guide/components-dynamic-async.html#Async-Components
     // this.dynamicComponent = () => import(`~/articles/${this.fileName}.md`).then(({ vue }) => vue.component
+  },
+  head () {
+    return {
+      htmlAttrs: {
+        lang: this.$i18n.locale
+      },
+      meta: [
+        { name: 'author', content: 'Facundo Soria Guerrero' },
+        { name: 'description', content: 'hola como te va' },
+        { property: 'og:title', content: this.title },
+        { property: 'og:description', content: this.description },
+        { property: 'og:url', content: process.env.BASE_URL + this.$router.currentRoute.fullPath },
+        { property: 'og:image', content: this.ogImage },
+        { name: 'twitter:description', content: this.description },
+        { name: 'twitter:image', content: this.ogImage }
+      ]
+    }
   }
 }
 </script>

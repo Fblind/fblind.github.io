@@ -2,6 +2,7 @@
 title: HTML Semantic.
 image: 'html-semantic-banner.png'
 date: 'Jun 28, 2020'
+datetime: '2020-6-28'
 keywords: ['HTML']
 readingTime: '2 Mins'
 description: 'HTML is a simple language to learn, not too complex. Something important is often not taken in mind though, the semantics of the language.'

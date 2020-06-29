@@ -10,7 +10,9 @@
     <div class="card-body post-card-preview-content">
       <div class="text-center preview-meta">
         <ul class="preview-meta-menu">
-          <li class="preview-meta-info"><small class="text-muted">{{ post.date }}</small></li>
+          <li class="preview-meta-info">
+            <small class="text-muted"><time :datetime="post.datetime">{{ post.date }}</time></small>
+          </li>
           <template v-for="keyword of post.keywords">
             <li :key="keyword" class="preview-meta-info">
               <small class="text-muted">{{ keyword }}</small>
