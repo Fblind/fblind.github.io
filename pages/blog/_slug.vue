@@ -80,13 +80,15 @@ export default {
       },
       meta: [
         { name: 'author', content: 'Facundo Soria Guerrero' },
-        { name: 'description', content: 'hola como te va' },
+        { name: 'twitter:card', content: 'summary' },
+        // { name: 'twitter:site', content: process.env.BASE_URL + this.$router.currentRoute.fullPath },
+        { name: 'twitter:creator', content: '@fack_nos' },
+        { name: 'twitter:description', content: this.description },
+        { name: 'twitter:image', content: this.ogImage },
         { property: 'og:title', content: this.title },
         { property: 'og:description', content: this.description },
         { property: 'og:url', content: process.env.BASE_URL + this.$router.currentRoute.fullPath },
-        { property: 'og:image', content: this.ogImage },
-        { name: 'twitter:description', content: this.description },
-        { name: 'twitter:image', content: this.ogImage }
+        { property: 'og:image', content: this.ogImage }
       ]
     }
   }
