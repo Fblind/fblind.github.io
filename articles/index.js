@@ -1,5 +1,5 @@
 const articles = {
-  en: ['html-semantic'],
-  es: ['html-semantic']
+  en: ['uncommon-html-elements', 'html-semantic'],
+  es: ['uncommon-html-elements', 'html-semantic']
 }
 export default articles
