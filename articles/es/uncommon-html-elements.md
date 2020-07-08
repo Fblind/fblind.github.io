@@ -68,12 +68,12 @@ Achicá la ventana para ver diferentes oportunidades u opciones 😱: <wbr>super
 ##### Código:
 ```html
 <p>
-Para copiar una texto hay que seleccionar el texto y luego <kbd><kbd>crtl</kbd>+<kbd>v</kbd></kbd>
+Para copiar una texto hay que seleccionar el texto y luego <kbd><kbd>crtl</kbd>+<kbd>c</kbd></kbd>
 </p>
 ```
 ##### Ejemplo:
 <p>
-Para copiar una texto hay que seleccionar el texto y luego <kbd><kbd>crtl</kbd> + <kbd>v</kbd></kbd>
+Para copiar una texto hay que seleccionar el texto y luego <kbd><kbd>crtl</kbd> + <kbd>c</kbd></kbd>
 </p>
 
 ## details
