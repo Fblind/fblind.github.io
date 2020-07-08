@@ -1,8 +1,8 @@
 ---
 title: Elementos HTML no tan cómunes.
 image: 'uncommon-html-elements-banner.png'
-date: 'Jul 6, 2020'
-datetime: '2020-7-6'
+date: 'Jul 7, 2020'
+datetime: '2020-7-7'
 keywords: ['HTML']
 readingTime: '2 Mins'
 description: 'HTML tiene muchos elementos pero por lo general usamos los mismos, acá algunos elementos no tan cómunes.'
