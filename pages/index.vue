@@ -32,7 +32,7 @@ export default {
     return Promise.all(articles[locale].map(asyncImport))
       .then((res) => {
         return {
-          posts: res
+          posts: res.reverse()
         }
       })
   }

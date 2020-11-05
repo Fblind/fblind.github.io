@@ -57,7 +57,9 @@ export default {
   },
   computed: {
     ogImage () {
-      return `${process.env.BASE_URL}/images/articles/${this.url}_thumbnail.png`
+      const imageChunks = this.image.split('.')
+      const ext = imageChunks.length ? imageChunks[imageChunks.length - 1] : '.png'
+      return `${process.env.BASE_URL}/images/articles/${this.url}_thumbnail.${ext}`
     }
   },
   created () {
