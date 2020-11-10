@@ -2,6 +2,8 @@
 import path from 'path'
 import Mode from 'frontmatter-markdown-loader/mode'
 import articles from './articles'
+import garden from './garden'
+
 
 export default {
   mode: 'universal',
@@ -88,7 +90,8 @@ export default {
               },
               homeTitle: 'Hello! I\'m Facundo',
               homeSubtitle: 'Full-Stack developer, curious about programming & animal lover',
-              readMore: 'Read more'
+              readMore: 'Read more',
+              myGarden: 'my garden'
             },
             es: {
               home: 'Inicio',
@@ -112,7 +115,8 @@ export default {
               },
               homeTitle: 'Hola! Soy Facundo',
               homeSubtitle: 'Desarrollador full-stack, curioso de la programación y amante de los animales',
-              readMore: 'Leer más'
+              readMore: 'Leer más',
+              myGarden: 'Mi jardín'
             }
           }
         }
@@ -130,7 +134,7 @@ export default {
       // add frontmatter-markdown-loader
       config.module.rules.push({
         test: /\.md$/,
-        include: path.resolve(__dirname, 'articles'),
+        include: [path.resolve(__dirname, 'articles'), path.resolve(__dirname, 'garden')],
         loader: 'frontmatter-markdown-loader',
         options: {
           mode: [Mode.VUE_COMPONENT, Mode.META]
@@ -142,5 +146,6 @@ export default {
     routes: ['/es']
       .concat(articles.en.map(w => `/blog/${w}`))
       .concat(articles.es.map(w => `es/blog/${w}`))
+      .concat(garden.map(w => `/garden/${w}`))
   }
 }

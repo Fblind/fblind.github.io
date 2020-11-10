@@ -13,6 +13,9 @@
         <nuxt-link class="nav-link capitalize" :to="localePath('about')">
           {{ $t('aboutMe') }}
         </nuxt-link>
+        <nuxt-link class="nav-link capitalize" :to="localePath('garden')">
+          {{ $t('myGarden') }} 🌱
+        </nuxt-link>
         <li
           v-for="locale in availableLocales"
           :key="locale.code"
