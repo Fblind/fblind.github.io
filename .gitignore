@@ -90,6 +90,7 @@ sw.*
 *.swp
 
 
+# articles
 articles/ideas.md
 articles/intro-to-software-testing.md
 articles/es/cache-memoization.md
@@ -97,6 +98,12 @@ articles/es/from-master-to-trunk.md
 articles/es/pragmatic-philosophy.md
 articles/es/juniors-enhance.md
 articles/es/react-stuffs.md
+
+# garden
+garden/how-to-teach-js.md
+garden/how-to-teach-react.md
+garden/testing-react-app.md
+
 TODO.md
 
 
