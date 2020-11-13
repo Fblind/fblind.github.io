@@ -67,3 +67,84 @@ describe("Component that is using window", () => {
   });
 })
 ```
+
+## Receta para testear unit store functions (TS)
+Simplemente uso el factory que tiene todo creado (middlewares y esas cosas) y dsp lo uso como si fuera una dependencia más.
+
+```js
+import { storeFactory } from "../../../redux/store";
+import step37 from "../steps/step37";
+import actionCreators from "../../../redux/actionCreators";
+import { createIntl } from "react-intl";
+import en from "../../../lang/en-US.json";
+
+describe("EXAM - Step 37", () => {
+  let store = storeFactory();
+  const localization = createIntl({
+    // Locale of the application
+    locale: "en",
+    // Locale of the fallback defaultMessage
+    defaultLocale: "en",
+    messages: en,
+  });
+
+  beforeEach(() => {});
+
+  afterEach(() => {});
+
+  function sut(expectation: (cb: any) => void) {
+    store = storeFactory();
+    const enhancerRedux = { store, dispatch: store.dispatch, actionCreators };
+    return step37(enhancerRedux, localization).run(expectation);
+  }
+
+  it("should complete the simulation with the correct information when timeout", (done) => {
+    const expectations = () => {
+      const { addCodeModal } = store.getState();
+      expect(addCodeModal.confirmed).toBe(true);
+      expect(addCodeModal.date).toBe("12/19/15");
+      expect(addCodeModal.transactionCode).toBe("05");
+      expect(addCodeModal.saved).toBe(true);
+      done();
+    };
+    sut(expectations);
+  });
+
+  it("should finish the step even if wrong info was filled", (done) => {
+    const expectations = () => {
+      const { addCodeModal } = store.getState();
+      expect(addCodeModal.confirmed).toBe(true);
+      expect(addCodeModal.date).toBe("12/19/15");
+      expect(addCodeModal.transactionCode).toBe("05");
+      expect(addCodeModal.saved).toBe(true);
+      done();
+    };
+    sut(expectations);
+
+    // deberia ser asi: https://stackoverflow.com/questions/54371096/redux-thunk-property-type-missing-when-calling-action-through-store-dispatch
+    store.dispatch<any>(actionCreators.addCodeModalShow());
+    store.dispatch<any>(
+      actionCreators.addCodeModalSet({
+        date: "12/19/15",
+        transactionCode: "95",
+      })
+    );
+
+    // const { addCodeModal } = store.getState();
+    // console.log(addCodeModal.transactionCode);
+  });
+});
+```
+
+## Receta para testear la existencia de una clase especifica.
+La siguiente receta me sirvio usando css modules, asi que esta bueno, necesitaba saber si estaban bien puestas las classes ya que antes las habia puesto mal 😅
+```js
+it("should have the 'Scheduler-not-available' class in the description for NOT AVAILABLE chart", () => {
+  const { getByTestId } = sut();
+
+  const notAvailable = getByTestId("notAvailable");
+  expect(notAvailable).toBeInTheDocument();
+  expect(notAvailable.classList).toHaveLength(2);
+  expect(notAvailable).toHaveClass("Scheduler-not-available");
+});
+```
