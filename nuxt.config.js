@@ -4,6 +4,9 @@ import Mode from 'frontmatter-markdown-loader/mode'
 import articles from './articles'
 import garden from './garden'
 
+// https://www.reddit.com/r/vuejs/comments/ifucjr/using_frontmattermarkdownloader_want_to_style/g2q2tpv/
+// https://www.samuelcoe.com/blog/18-02-25-nuxt-hightlight/
+// https://highlightjs.org/download/
 
 export default {
   mode: 'universal',
@@ -19,10 +22,12 @@ export default {
     ],
     link: [
       // TODO: Add all types of favicon
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/tomorrow-night-blue.min.css' }
     ],
     script: [
-      { src: 'https://kit.fontawesome.com/753a7d77ab.js', crossorigin: 'anonymous', async: true, defer: true }
+      { src: 'https://kit.fontawesome.com/753a7d77ab.js', crossorigin: 'anonymous', async: true, defer: true },
+      { src: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js' }
     ]
   },
   /*

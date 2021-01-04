@@ -119,4 +119,71 @@ h1.banner-title.no-border {
     padding-left: 0;
   }
 }
+
+body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+body code::before,
+body code::after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+body pre {
+  word-wrap: normal;
+}
+
+body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+body .highlight {
+  margin-bottom: 16px;
+}
+
+body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+body .highlight pre,
+body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+body pre code {
+  display: inline;
+  max-width: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+body pre code::before,
+body pre code::after {
+  content: normal;
+}
+
 </style>
