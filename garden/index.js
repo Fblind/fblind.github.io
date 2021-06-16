@@ -1,2 +1,2 @@
-const garden = ['testing-react-recipes', 'react-recipes', 'git-stuffs']
+const garden = ['testing-react-recipes', 'react-recipes', 'git-stuffs', 'elixir-stuffs']
 export default garden
