@@ -7,7 +7,8 @@
       <p>This is my garden and I use it as a continuous way of learning and to keep what I discovered in one place...</p>
       <ul>
         <li v-for="essay of essays" :key="essay.title">
-          <nuxt-link :to="getEssayURL(essay)">{{ essay.title }} </nuxt-link>
+          <nuxt-link
+            :to="getEssayURL(essay)">{{ getTitle(essay) }} </nuxt-link>
         </li>
       </ul>
       <span>Photo by <a href="https://unsplash.com/@yendvu?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Yen Vu</a> on <a href="https://unsplash.com/s/photos/gardening-landscape?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
@@ -19,6 +20,10 @@
 import Banner from '~/components/Banner.vue'
 import img from '~/assets/garden-cover.jpg'
 import garden from '~/garden'
+
+function shouldBeShown(essay) {
+  return essay.visibility !== "hidden";
+}
 
 export default {
   name: 'Garden',
@@ -33,13 +38,16 @@ export default {
     return Promise.all(garden.map(asyncImport))
       .then((res) => {
         return {
-          essays: res.reverse()
+          essays: res.reverse().filter(shouldBeShown)
         }
       })
   },
   methods: {
     getEssayURL (essay) {
       return `garden/${essay.url}`
+    },
+    getTitle(essay) {
+      return `${essay.title}${essay.status ? ` -  (${essay.status})` : ""}`
     }
   },
   head () {

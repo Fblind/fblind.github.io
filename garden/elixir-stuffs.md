@@ -1,6 +1,9 @@
 ---
 title: Phoenix/Elixir stuffs
 url: "elixir-stuffs"
+keywords: ["elixir", "phoenix"]
+status: "draft"
+visibility: "show"
 ---
 
 # Phoenix/Elixir stuffs
@@ -59,3 +62,26 @@ If you're using vscode when coding elixir and you want to get the most value fro
 ## Migrations
 * [Add new column](https://stackoverflow.com/questions/48494655/how-to-add-field-in-existing-table-phoenix)
 * [Cheatsheet](https://devhints.io/phoenix-migrations)
+
+### Add indexes
+```elixir
+defmodule Project.Repo.Migrations.AddIndex do
+  use Ecto.Migration
+
+  def change do
+    create index(:movements, [:account_id, :another_field])
+  end
+end
+```
+
+## Enums
+* [Enums - basically sort](https://inquisitivedeveloper.com/lwm-elixir-36/)
+```elixir
+  Enum.sort_by(list, & &1["property"]) # asc by default
+```
+
+## Locking DB with Ecto
+Sometimes race conditions happens -> [differents ways to solve them](https://medium.com/@bruteforcecat/database-lock-in-elixir-why-and-how-and-the-alternative-in-elixir-6e0581156ee3)
+
+# Ecto connection errors
+* [List of several commons errors and how to solve](http://blog.tap349.com/elixir/ecto/2018/12/28/ecto-troubleshooting/)
